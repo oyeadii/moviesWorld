@@ -1,0 +1,24 @@
+  .popular-movie-list-item {
+    margin-right: 30px;
+  }
+  
+  .popular-movie-list-item:hover .popular-movie-list-item-img {
+    opacity: 0.5;
+  }
+  
+  .popular-movie-list-item-img {
+    border-radius: 7px;
+    transition: all 1s ease-in-out;
+    float: left;
+    width: 250px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 7px;
+    background-size: cover;
+    border-radius: 20px;
+    background-position-x: center;
+  }
+  .popular-movie-list-item-img ul {
+      text-align: center;
+      color: #000;
+  }

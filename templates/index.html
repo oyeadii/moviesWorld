@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/popular.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Movies World</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <a href='/'><h2 class="logo">Movies World</h2></a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Now playing</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        {% block content %}
+                        {% for movie in movies %}
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="http://image.tmdb.org/t/p/w500{{movie.backdrop_path}}">
+                        </div>
+                        {% endfor %}
+                        {% endblock %}
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+        </div>
+        <div class="popular-container">
+            <div>
+                <h1 class="popular-movie-title" style="text-align: center;">Popular Movies</h1>
+                <br>
+                {% block content2 %}
+                {% for movie in movies2 %}
+                    <div class="popular-movie-list-item">
+                            <div class="popular-movie-list-item-img" style="background-image: url(http://image.tmdb.org/t/p/w500{{movie.backdrop_path}});">
+                            </div>
+                    </div>
+                {% endfor %}
+                {% endblock %}
+            </div>
+        </div>
+    <script src="{{url_for('static', filename='app.js')}}"></script>
+    <div>
+</body>
+
+</html>
